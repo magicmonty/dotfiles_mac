@@ -64,6 +64,8 @@
       "firefox"
       "google-chrome"
       "sf-symbols"
+      "inkscape"
+      "gimp"
     ];
   };
 
