@@ -32,9 +32,6 @@
   system.defaults = {
     dock = {
       autohide = true;
-      mru-spaces = false;
-      show-recents = false;
-      static-only = true;
       expose-animation-duration = 0.01;
     };
     finder = {
