@@ -66,6 +66,7 @@
       "sf-symbols"
       "inkscape"
       "gimp"
+      "activitywatch"
     ];
   };
 

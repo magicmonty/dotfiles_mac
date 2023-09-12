@@ -48,6 +48,7 @@ in {
       git_metrics = {
         disabled = false;
         format = "([$added]($added_style) )([✘$deleted]($deleted_style) )";
+        command_timeout = 1000;
       };
 
       dotnet = {
@@ -107,6 +108,7 @@ in {
         style = "yellow bold";
         ignore_submodules = true;
         format = "([$all_status$ahead_behind]($style) )";
+        command_timeout = 1000;
       };
 
       hostname = {
