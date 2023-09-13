@@ -32,6 +32,9 @@
   system.defaults = {
     dock = {
       autohide = true;
+      mru-spaces = true;
+      show-recents = true;
+      static-only = false;
       expose-animation-duration = 0.01;
     };
     finder = {
@@ -64,6 +67,7 @@
       "inkscape"
       "gimp"
       "activitywatch"
+      "rectangle"
     ];
   };
 
