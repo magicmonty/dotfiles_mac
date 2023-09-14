@@ -55,19 +55,20 @@
       upgrade = true;
     };
     casks = [
+      "activitywatch"
       "alfred"
-      "jetbrains-toolbox"
-      "iterm2"
-      "microsoft-teams"
-      "microsoft-outlook"
       "enpass"
       "firefox"
-      "google-chrome"
-      "sf-symbols"
-      "inkscape"
       "gimp"
-      "activitywatch"
+      "google-chrome"
+      "inkscape"
+      "iterm2"
+      "jetbrains-toolbox"
+      "keepassxc"
       "rectangle"
+      "microsoft-teams"
+      "microsoft-outlook"
+      "sf-symbols"
     ];
   };
 
