@@ -4,8 +4,7 @@
   pkgs,
   ...
 }:
-with lib; 
-{
+with lib; {
   home.packages = with pkgs; [
     less
     lazygit
@@ -103,8 +102,19 @@ with lib;
           autocrlf = "input";
           editor = "nvim";
         };
-        merge.conflictstyle = "diff3";
-        diff.colorMoved = "default";
+        merge = {
+          tool = "bc";
+          conflictstyle = "diff3";
+        };
+        mergetool = {
+          prompt = false;
+          bc.trustExitCode = true;
+        };
+        difftool.prompt = false;
+        diff = {
+          tool = "bc";
+          colorMoved = "default";
+        };
         fetch.prune = true;
         push.default = "current";
         pull = {

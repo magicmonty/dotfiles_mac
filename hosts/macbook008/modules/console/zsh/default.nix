@@ -17,7 +17,7 @@ with lib;
         autocd = true;
         enableCompletion = true;
         enableAutosuggestions = true;
-        enableSyntaxHighlighting = true;
+        syntaxHighlighting.enable = true;
         historySubstringSearch.enable = true;
 
         history = {
@@ -58,6 +58,8 @@ with lib;
           gpushf = "git push --force-with-lease";
           gpull = "git pull";
           gpf = "git push --force-with-lease";
+          gra = "git rebase --abort";
+          grc = "git rebase --continue";
           grv = "git remote --verbose";
           gd = "git diff";
           gdc = "git diff --staged";

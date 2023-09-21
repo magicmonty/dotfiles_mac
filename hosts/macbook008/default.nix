@@ -29,6 +29,18 @@
 
   # bash is enabled by default
 
+  fonts = {
+    fontDir.enable = true;
+    fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "JetBrainsMono" "Monoid" ]; })
+    ];
+  };
+  
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+  };
+
   system.defaults = {
     dock = {
       autohide = true;
@@ -57,6 +69,7 @@
     casks = [
       "activitywatch"
       "alfred"
+      "beyond-compare"
       "enpass"
       "firefox"
       "gimp"
@@ -69,6 +82,8 @@
       "microsoft-teams"
       "microsoft-outlook"
       "sf-symbols"
+      "tigervnc-viewer"
+      "visual-studio-code"
     ];
   };
 
