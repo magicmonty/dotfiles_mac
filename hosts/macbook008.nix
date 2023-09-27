@@ -1,8 +1,11 @@
-{ pkgs, ... }:
 {
+  pkgs,
+  stateVersion,
+  ...
+}: {
   users.users."martin.gondermann" = {
     name = "martin.gondermann";
-    home = "/Users/martin.gondermann";	
+    home = "/Users/martin.gondermann";
   };
 
   nix = {
@@ -23,40 +26,45 @@
 
   # if you use zsh (the default on new macOS installations),
   # you'll need to enable this so nix-darwin creates a zshrc sourcing needed environment changes
-  programs.zsh.enable = true;
-  programs.gnupg.agent.enable = true;
-  environment.pathsToLink = [ "/share/zsh" ];
+  programs = {
+    zsh.enable = true;
+    gnupg.agent.enable = true;
+  };
+
+  environment.pathsToLink = ["/share/zsh"];
 
   # bash is enabled by default
 
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" "Monoid" ]; })
+      (nerdfonts.override {fonts = ["JetBrainsMono" "Monoid"];})
     ];
   };
-  
-  system.keyboard = {
-    enableKeyMapping = true;
-    remapCapsLockToEscape = true;
-  };
 
-  system.defaults = {
-    dock = {
-      autohide = true;
-      mru-spaces = true;
-      show-recents = true;
-      static-only = false;
-      expose-animation-duration = 0.01;
+  system = {
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToEscape = true;
     };
-    finder = {
-      AppleShowAllExtensions = true;
-    };
-    NSGlobalDomain = {
-      AppleShowAllExtensions = true;
-      ApplePressAndHoldEnabled = false;
-      InitialKeyRepeat = 25;
-      KeyRepeat = 4;
+
+    defaults = {
+      dock = {
+        autohide = true;
+        mru-spaces = true;
+        show-recents = true;
+        static-only = false;
+        expose-animation-duration = 0.01;
+      };
+      finder = {
+        AppleShowAllExtensions = true;
+      };
+      NSGlobalDomain = {
+        AppleShowAllExtensions = true;
+        ApplePressAndHoldEnabled = false;
+        InitialKeyRepeat = 25;
+        KeyRepeat = 4;
+      };
     };
   };
 
@@ -90,14 +98,9 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users."martin.gondermann" = { pkgs, ... } : {
-      imports = [ ./modules/console ];
-      programs = {
-        home-manager.enable = true;
-      };
-      home = {
-        stateVersion = "23.05";
-      };
+    extraSpecialArgs = { inherit stateVersion; };
+    users = {
+      "martin.gondermann" = ../users/martin.gondermann.nix;
     };
   };
 }

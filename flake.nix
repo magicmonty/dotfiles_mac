@@ -2,9 +2,9 @@
   description = "My MacOS config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -14,14 +14,24 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, darwin }: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    darwin,
+  }: let
+    stateVersion = "23.11";
+  in {
     darwinConfigurations = {
-      "MACBOOK008" = darwin.lib.darwinSystem {
+      MACBOOK008 = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-	modules = [
-	  home-manager.darwinModules.home-manager
-	  ./hosts/macbook008
-	];
+        specialArgs = {
+          inherit stateVersion;
+        };
+        modules = [
+          home-manager.darwinModules.home-manager
+          ./hosts/macbook008.nix
+        ];
       };
     };
   };

@@ -1,4 +1,4 @@
-local isTTY = require("magicmonty.utils").isTTY
+local isTTY = require('magicmonty.utils').isTTY
 
 -- Tree view:
 local function on_attach(bufnr)
@@ -31,7 +31,6 @@ return {
   },
   config = function()
     local icons = require('magicmonty.theme').icons.diagnostics
-    local tree_cb = require('nvim-tree.config').nvim_tree_callback
 
     require('nvim-tree').setup({
       on_attach = on_attach,
