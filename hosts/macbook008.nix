@@ -83,7 +83,6 @@
       "gimp"
       "google-chrome"
       "inkscape"
-      "iterm2"
       "jetbrains-toolbox"
       "keepassxc"
       "rectangle"
@@ -92,6 +91,7 @@
       "sf-symbols"
       "tigervnc-viewer"
       "visual-studio-code"
+      "wezterm"
     ];
   };
 

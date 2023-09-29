@@ -15,8 +15,8 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
+    self,
     home-manager,
     darwin,
   }: let

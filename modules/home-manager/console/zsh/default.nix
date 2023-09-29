@@ -133,10 +133,6 @@ with lib;
             bindkey '^[[1;5C' forward-word
 
             export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
-            
-            if [ -e $HOME/.iterm_shell_integration.zsh ]; then
-              . $HOME/.iterm2_shell_integration.zsh 
-            fi
           '';
       };
   };
