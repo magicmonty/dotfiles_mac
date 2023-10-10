@@ -8,6 +8,7 @@ with lib; {
   home.packages = with pkgs; [
     less
     lazygit
+    cz-cli
   ];
 
   programs = {

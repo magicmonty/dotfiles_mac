@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -83,69 +84,6 @@ in {
         -- Mappings
         local resize_pane = 'resize_pane'
 
-        default_mappings = {}
-        
-        local function mapl(key, action)
-          table.insert(default_mappings, { key = key, mods = 'LEADER', action = action })
-        end
-        local function mapc(key, action)
-          table.insert(default_mappings, { key = key, mods = 'CTRL', action = action })
-        end
-
-        -- Splits with <Leader># (Horizontal) or <Leader>- (Vertical)
-        mapl('#', act.SplitHorizontal({ domain = 'CurrentPaneDomain' }))
-        mapl('-', act.SplitVertical({ domain = 'CurrentPaneDomain' }))
-
-        --  Move between Splits (either <Ctrl>h/j/k/l or <Leader>h/j/k/l or <Leader>ArrowKey)
-        mapl('h', act.ActivatePaneDirection('Left'))
-        mapl('LeftArrow', act.ActivatePaneDirection('Left'))
-        mapc('h', act.ActivatePaneDirection('Left'))
-
-        mapl('j', act.ActivatePaneDirection('Down'))
-        mapl('DownArrow', act.ActivatePaneDirection('Down'))
-        mapc('j', act.ActivatePaneDirection('Down'))
-
-        mapl('k', act.ActivatePaneDirection('Up'))
-        mapl('UpArrow', act.ActivatePaneDirection('Up'))
-        mapc('k', act.ActivatePaneDirection('Up'))
-
-        mapl('l', act.ActivatePaneDirection('Right'))
-        mapl('RightArrow', act.ActivatePaneDirection('Right'))
-        mapc('l', act.ActivatePaneDirection('Right'))
-
-        -- <Leader>r activates resize mode
-        mapl('r', act.ActivateKeyTable({ name = resize_pane, one_shot = false }))
-
-        -- <Leader>g or <Ctrl>g opens a new Tab with lazygit
-        mapl('g', act.SpawnCommandInNewTab({ args = { 'lazygit' } }))
-        mapc('g', act.SpawnCommandInNewTab({ args = { 'lazygit' } }))
-
-        -- <Leader>t opens a new tab
-        mapl('t', act.SpawnTab('CurrentPaneDomain'))
-        mapl(',', act.ActivateTabRelative(-1))
-        mapl('.', act.ActivateTabRelative(1))
-
-        -- <Leader><CTRL>Space or <Leader>Space activates Copy Mode
-        table.insert(default_mappings, { key = 'Space', mods = 'LEADER|CTRL', action = act.ActivateCopyMode })
-        table.insert(default_mappings, { key = 'Space', mods = 'LEADER', action = act.ActivateCopyMode })
-
-        -- <CTRL+SHIFT>r reloads the configuration
-        table.insert(default_mappings, { key = 'R', mods = 'CTRL|SHIFT', action = act.ReloadConfiguration })
-
-        -- <Leader>u opens URL in Browser ( https://www.google.de )
-        mapl(
-            'u',
-            act.QuickSelectArgs({
-              label = 'open URL',
-              patterns = { "(?:https?://[a-zA-Z0-9_.~!*'();:@&=+$,/?#\\[%-\\]]+|\\\\[\\S ]+)" },
-              action = wt.action_callback(function(window, pane)
-                  local url = window:get_selection_text_for_pane(pane)
-                  wt.log_info('opening URL ' .. url)
-                  wt.open_with(url)
-                  end),
-              })
-            )
-
         -- Config
         return {
           adjust_window_size_when_changing_font_size = false,
@@ -180,7 +118,63 @@ in {
             },
             copy_mode = wt.gui.default_key_tables().copy_mode,
           },
-          keys = default_mappings,
+          keys = {
+            -- Splits with <Leader># (Horizontal) or <Leader>- (Vertical)
+            { key = '#', mods = 'LEADER', action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }) },
+            { key = '-', mods = 'LEADER', action = act.SplitVertical({ domain = 'CurrentPaneDomain' }) },
+
+            --  Move between Splits (either <Ctrl>h/j/k/l or <Leader>h/j/k/l or <Leader>ArrowKey)
+            { key = 'h', mods = 'LEADER', action = act.ActivatePaneDirection('Left') },
+            { key = 'LeftArrow', mods = 'LEADER', action = act.ActivatePaneDirection('Left') },
+            { key = 'h', mods = 'CTRL', action = act.ActivatePaneDirection('Left') },
+
+            { key = 'j', mods = 'LEADER', action = act.ActivatePaneDirection('Down') },
+            { key = 'DownArrow', mods = 'LEADER', action = act.ActivatePaneDirection('Down') },
+            { key = 'j', mods = 'CTRL', action = act.ActivatePaneDirection('Down') },
+
+            { key = 'k', mods = 'LEADER', action = act.ActivatePaneDirection('Up') },
+            { key = 'UpArrow', mods = 'LEADER', action = act.ActivatePaneDirection('Up') },
+            { key = 'k', mods = 'CTRL', action = act.ActivatePaneDirection('Up') },
+
+            { key = 'l', mods = 'LEADER', action = act.ActivatePaneDirection('Right') },
+            { key = 'RightArrow', mods = 'LEADER', action = act.ActivatePaneDirection('Right') },
+            { key = 'l', mods = 'CTRL', action = act.ActivatePaneDirection('Right') },
+
+            -- <Leader>r activates resize mode
+            { key = 'r', mods = 'LEADER', action = act.ActivateKeyTable({ name = resize_pane, one_shot = false }) },
+            -- <Leader>g or <Ctrl>g opens a new Tab with lazygit
+            { key = 'g', mods = 'LEADER', action = act.SpawnCommandInNewTab({ args = { '${pkgs.lazygit}/bin/lazygit' } }) },
+            { key = 'g', mods = 'CTRL', action = act.SpawnCommandInNewTab({ args = { '${pkgs.lazygit}/bin/lazygit' } }) },
+
+            -- <Leader>t opens a new tab
+            { key = 't', mods = 'LEADER', action = act.SpawnTab('CurrentPaneDomain') },
+            { key = ',', mods = 'LEADER', action = act.ActivateTabRelative(-1) },
+            { key = '.', mods = 'LEADER', action = act.ActivateTabRelative(1) },
+
+            -- <Leader><CTRL>Space or <Leader>Space activates Copy Mode
+              -- { key = 'Space', mods = 'LEADER|CTRL', action = act.ActivateCopyMode },
+            -- { key = 'Space', mods = 'LEADER', action = act.ActivateCopyMode },
+
+            -- <CTRL+SHIFT>r reloads the configuration
+            { key = 'r', mods = 'CTRL|SHIFT', action = act.ReloadConfiguration },
+
+            -- <Leader>u opens URL in Browser ( https://www.google.de )
+            { 
+              key = 'u', 
+              mods = 'LEADER', 
+              action = act.QuickSelectArgs({
+                  label = 'open URL',
+                  patterns = { "(?:https?://[a-zA-Z0-9_.~!*'();:@&=+$,/?#\\[%-\\]]+|\\\\[\\S ]+)" },
+                  action = wt.action_callback(
+                    function(window, pane)
+                      local url = window:get_selection_text_for_pane(pane)
+                      wt.log_info('opening URL ' .. url)
+                      wt.open_with(url)
+                    end
+                  ),
+              })
+            },
+          },
           leader = { key = 'Space', mods = 'CTRL|SHIFT', timeout_milliseconds = 1000 },
           warn_about_missing_glyphs = false,
           window_decorations = 'INTEGRATED_BUTTONS|RESIZE',

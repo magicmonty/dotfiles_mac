@@ -77,6 +77,8 @@
     casks = [
       "activitywatch"
       "alfred"
+      "azure-cli"
+      "azure-data-studio"
       "beyond-compare"
       "enpass"
       "firefox"
