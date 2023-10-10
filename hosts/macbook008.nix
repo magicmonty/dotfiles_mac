@@ -91,6 +91,7 @@
       "microsoft-teams"
       "microsoft-outlook"
       "sf-symbols"
+      "tailscale"
       "tigervnc-viewer"
       "visual-studio-code"
       "wezterm"
