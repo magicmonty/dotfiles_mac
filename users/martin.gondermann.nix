@@ -14,6 +14,9 @@
     inherit stateVersion;
     username = "martin.gondermann";
     homeDirectory = "/Users/martin.gondermann";
+    sessionVariables = {
+      ANDROID_SDK = "~/Library/Android/sdk";
+    };
   };
 
   sys.software.wezterm.enable = true;

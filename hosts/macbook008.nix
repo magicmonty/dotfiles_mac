@@ -68,18 +68,30 @@
     };
   };
 
+  launchd = {
+    user.envVariables = {
+      ANDROID_SDK = "~/Library/Android/sdk";
+    };
+  };
+
   homebrew = {
     enable = true;
+    brewPrefix = "/opt/homebrew/bin";
     onActivation = {
       autoUpdate = true;
       upgrade = true;
+      cleanup = "uninstall";
     };
+    brews = [
+      "azure-cli"
+      "krb5"
+    ];
     casks = [
       "activitywatch"
       "alfred"
-      "azure-cli"
       "azure-data-studio"
       "beyond-compare"
+      "dotnet-sdk"
       "enpass"
       "firefox"
       "gimp"
@@ -88,11 +100,13 @@
       "jetbrains-toolbox"
       "keepassxc"
       "rectangle"
+      "microsoft-auto-update" # Needed for auto-Updating Teams and Outlook
       "microsoft-teams"
       "microsoft-outlook"
       "sf-symbols"
       "tailscale"
-      "tigervnc-viewer"
+      "vnc-viewer"
+      "tunnelblick"
       "visual-studio-code"
       "wezterm"
     ];
@@ -101,7 +115,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit stateVersion; };
+    extraSpecialArgs = {inherit stateVersion;};
     users = {
       "martin.gondermann" = ../users/martin.gondermann.nix;
     };

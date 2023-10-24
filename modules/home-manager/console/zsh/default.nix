@@ -134,6 +134,8 @@ with lib;
             bindkey '^[[1;5C' forward-word
 
             export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+
+            eval "$(/opt/homebrew/bin/brew shellenv)"
           '';
       };
   };
