@@ -85,10 +85,12 @@
     brews = [
       "azure-cli"
       "krb5"
+      "scrcpy"
     ];
     casks = [
       "activitywatch"
       "alfred"
+      "android-platform-tools"
       "azure-data-studio"
       "beyond-compare"
       "dotnet-sdk"
