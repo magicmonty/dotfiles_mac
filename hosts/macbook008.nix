@@ -96,6 +96,7 @@
       "dotnet-sdk"
       "enpass"
       "firefox"
+      "fork" # GIT Client
       "gimp"
       "google-chrome"
       "inkscape"
