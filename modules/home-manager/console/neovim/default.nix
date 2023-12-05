@@ -19,6 +19,8 @@ with lib; {
       stylua
       tree-sitter
       unzip
+      kotlin-language-server
+      nil
     ];
 
     sessionVariables = {
@@ -28,7 +30,7 @@ with lib; {
     };
 
     file.".config/nvim" = {
-      source = ./config;
+      source = ./lazyvim;
       recursive = true;
     };
   };
@@ -59,7 +61,8 @@ with lib; {
       ];
 
       extraLuaConfig = ''
-        require("magicmonty")
+        -- bootstrap lazy.nvim, LazyVim and your plugins
+        require("config.lazy")
 
         local status, ts_install = pcall(require, "nvim-treesitter.install")
         if status then
