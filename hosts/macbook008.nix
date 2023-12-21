@@ -107,6 +107,7 @@
       "microsoft-auto-update" # Needed for auto-Updating Teams and Outlook
       "microsoft-teams"
       "microsoft-outlook"
+      "postman"
       "sf-symbols"
       "tailscale"
       "vnc-viewer"

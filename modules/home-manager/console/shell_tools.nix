@@ -1,23 +1,24 @@
 {
-  config,
   pkgs,
   ...
 }: {
   home.packages = with pkgs; [
-    eza
-    ripgrep
-    jq
-    fd
-    curl
-    wget
     bat
-    fzf
-    gum
-    unzip
-    git
-    lazygit
+    curl
     delta
+    eza
+    fd
+    fzf
+    git
+    gum
+    jq
+    lazygit
+    nodejs_21
     ranger
+    ripgrep
+    unzip
+    wget
+    yarn
   ];
 
   programs = {

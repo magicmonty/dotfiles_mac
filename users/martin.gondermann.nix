@@ -1,7 +1,4 @@
-{
-  stateVersion,
-  ...
-}: {
+{stateVersion, ...}: {
   imports = [
     ../modules/home-manager/console
     ../modules/home-manager/desktop/wezterm.nix
