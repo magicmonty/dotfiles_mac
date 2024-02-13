@@ -116,6 +116,7 @@ with lib; {
           tool = "bc";
           colorMoved = "default";
         };
+        rerere.enabled = true;
         fetch.prune = true;
         push.default = "current";
         pull = {
