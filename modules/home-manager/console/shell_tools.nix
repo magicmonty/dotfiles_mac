@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     bat
     curl
@@ -26,10 +23,10 @@
       enable = true;
       enableZshIntegration = true;
       defaultOptions = [
-	"--height 40%"
-	"--layout reverse"
-	"--border"
-	"--inline-info"
+        "--height 40%"
+        "--layout reverse"
+        "--border"
+        "--inline-info"
       ];
     };
 
@@ -44,6 +41,11 @@
         theme = "base16-256";
         "italic-text" = "always";
       };
+    };
+
+    yazi = {
+      enable = true;
+      enableZshIntegration = true;
     };
   };
 }

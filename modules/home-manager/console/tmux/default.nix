@@ -4,8 +4,7 @@
   pkgs,
   ...
 }:
-with lib; 
-{
+with lib; {
   home = {
     packages = [pkgs.diceware];
     file.".config/tmux/nightfox.conf".source = ./nightfox.conf;
@@ -147,14 +146,9 @@ with lib;
         source-file ~/.config/tmux/nightfox.conf
       '';
     };
-  
+
     zsh = {
       initExtra = ''
-        # tmux
-        if [[ -z "$TMUX" ]]; then
-          alias tmux="tmux_start"
-        fi
-
         function tmux_start () {
 
           MUX=${pkgs.tmux}/bin/tmux
@@ -176,6 +170,13 @@ with lib;
             fi
           fi
         }
+
+        # tmux
+        if [[ -z "$TMUX" ]]; then
+          alias tmux="tmux_start"
+          tmux_start
+        fi
+
       '';
     };
   };
