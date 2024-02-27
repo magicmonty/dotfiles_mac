@@ -31,7 +31,12 @@
     gnupg.agent.enable = true;
   };
 
-  environment.pathsToLink = ["/share/zsh"];
+  environment = {
+    pathsToLink = ["/share/zsh"];
+    systemPackages = with pkgs; [
+      podman-compose
+    ];
+  };
 
   # bash is enabled by default
 
@@ -107,6 +112,7 @@
       "microsoft-auto-update" # Needed for auto-Updating Teams and Outlook
       "microsoft-teams"
       "microsoft-outlook"
+      "podman-desktop"
       "postman"
       "sf-symbols"
       "tailscale"

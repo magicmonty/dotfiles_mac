@@ -29,6 +29,7 @@ with lib; {
       VISUAL = "nvim";
     };
 
+    file.".ideavimrc".source = ./ideavimrc;
     file.".config/nvim" = {
       source = ./lazyvim;
       recursive = true;
@@ -55,7 +56,7 @@ with lib; {
       extraPackages = with pkgs; [
         cargo
         gcc
-        nodejs
+        nodejs_20
         ruby
         python310
       ];
