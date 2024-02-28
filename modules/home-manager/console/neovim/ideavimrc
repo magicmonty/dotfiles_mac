@@ -87,8 +87,8 @@ nnoremap <leader>p :action Back<CR>
 nnoremap <leader>n :action Forward<CR>
 
 nnoremap <leader>b :action ToggleLineBreakpoint<CR>
-nnoremap <leader># :action CommentByLineComment<CR>
-vnoremap <leader># :action CommentByBlockComment<CR>
+nnoremap gcc :action CommentByLineComment<CR>
+vnoremap gc :action CommentByBlockComment<CR>
 
 " Plugins
 Plug 'tpope/vim-surround'

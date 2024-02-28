@@ -55,8 +55,6 @@ map("n", "äq", vim.cmd.cnext, { desc = "Next quickfix", remap = true, silent = 
 unmap("n", "[q")
 map("n", "öq", vim.cmd.cprev, { desc = "Previous quickfix", silent = true, remap = true })
 
-map("n", "<C-a>", "ggVG", { desc = "Select all", remap = true, silent = true })
-
 -- Unmap Lazy keybinds
 unmap("n", "<leader>l")
 unmap("n", "<leader>L")
