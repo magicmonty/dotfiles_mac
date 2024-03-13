@@ -56,8 +56,8 @@
     defaults = {
       dock = {
         autohide = true;
-        mru-spaces = true;
-        show-recents = true;
+        mru-spaces = false;
+        show-recents = false;
         static-only = false;
         expose-animation-duration = 0.01;
       };
@@ -95,7 +95,7 @@
     ];
     casks = [
       "activitywatch"
-      "alfred"
+      "alt-tab"
       "android-platform-tools"
       "azure-data-studio"
       "beyond-compare"
@@ -105,6 +105,7 @@
       "fork" # GIT Client
       "gimp"
       "google-chrome"
+      "hiddenbar"
       "inkscape"
       "jetbrains-toolbox"
       "keepassxc"
@@ -114,6 +115,7 @@
       "microsoft-outlook"
       "podman-desktop"
       "postman"
+      "raycast"
       "sf-symbols"
       "tailscale"
       "vnc-viewer"
