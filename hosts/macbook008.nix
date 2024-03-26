@@ -91,6 +91,8 @@
     brews = [
       "azure-cli"
       "krb5"
+      "podman"
+      "podman-compose"
       "scrcpy"
     ];
     casks = [
