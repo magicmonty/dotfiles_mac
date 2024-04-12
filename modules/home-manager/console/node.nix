@@ -1,8 +1,11 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  better-commits = pkgs.callPackage (import ./better-commits.nix) {};
+in {
   config = {
-    home.packages = with pkgs; [
-      nodePackages."@angular/cli"
-      nodejs_20
+    home.packages = [
+      pkgs.nodePackages."@angular/cli"
+      better-commits
+      pkgs.nodejs_20
     ];
   };
 }
