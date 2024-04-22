@@ -8,6 +8,7 @@ with lib; {
     packages = with pkgs; [
       alejandra
       fd
+      figlet
       lua-language-server
       marksman
       nil

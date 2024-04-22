@@ -14,6 +14,9 @@
     sessionVariables = {
       ANDROID_SDK = "~/Library/Android/sdk";
     };
+    sessionPath = [
+      "~/.dotnet/tools"
+    ];
   };
 
   sys.software.wezterm.enable = true;
