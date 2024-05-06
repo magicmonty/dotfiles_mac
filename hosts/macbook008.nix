@@ -93,6 +93,7 @@
     };
     brews = [
       "azure-cli"
+      "gnu-sed"
       "krb5"
       "podman"
       "podman-compose"

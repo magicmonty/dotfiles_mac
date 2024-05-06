@@ -28,6 +28,8 @@ with lib; {
 
       shellAliases = {
         v = "nvim";
+        vim = "nvim";
+        vi = "nvim";
         ls = "eza --git";
         la = "eza --git -glah --color-scale";
         ll = "eza --git -glh --color-scale";

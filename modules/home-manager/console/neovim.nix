@@ -21,6 +21,7 @@ in {
       packages = with pkgs; [
         inputs.nixvim.packages.${system}.default
         fd
+        gnused
         unzip
       ];
 
