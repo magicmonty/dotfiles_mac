@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./git.nix
-    ./neovim
+    ./neovim.nix
     ./node.nix
     ./shell_tools.nix
     ./starship.nix

@@ -1,6 +1,8 @@
 {
   pkgs,
   stateVersion,
+  inputs,
+  system,
   ...
 }: {
   users.users."martin.gondermann" = {
@@ -131,7 +133,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = {inherit stateVersion;};
+    extraSpecialArgs = {inherit stateVersion inputs system;};
     users = {
       "martin.gondermann" = ../users/martin.gondermann.nix;
     };

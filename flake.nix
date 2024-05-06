@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixpkgs-23.11-darwin";
+    nixvim.url = "github:magicmonty/nixvim";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,15 +19,17 @@
     self,
     home-manager,
     darwin,
+    nixvim,
     nixpkgs,
-  }: let
+  } @ inputs: let
     stateVersion = "23.11";
+    system = "aarch64-darwin";
   in {
     darwinConfigurations = {
       MACBOOK008 = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
+        inherit system;
         specialArgs = {
-          inherit stateVersion;
+          inherit stateVersion system inputs;
         };
         modules = [
           home-manager.darwinModules.home-manager
