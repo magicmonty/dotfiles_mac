@@ -17,10 +17,14 @@ with lib; {
       settings = {
         gui = {
           showIcons = true;
-          theme = {
-            lightTheme = false;
-          };
+          showRandomTip = false;
+          nerdFontsVersion = "3";
         };
+        update = {
+          method = "never";
+        };
+        disableStartupPopups = true;
+        notARepository = "quit";
       };
     };
 
