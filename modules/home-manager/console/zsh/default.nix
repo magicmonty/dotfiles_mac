@@ -139,7 +139,6 @@ with lib; {
         export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
 
         eval "$(/opt/homebrew/bin/brew shellenv)"
-        source <(ng completion script)
       '';
     };
   };
