@@ -14,12 +14,23 @@ in {
       type = types.bool;
       default = true;
     };
+
+    lite = mkOption {
+      type = types.bool;
+      default = true;
+    };
   };
 
   config = mkIf cfg.neovim.enable {
-    home = {
+    home = let
+      nixvimPkgs = inputs.nixvim.packages.${system};
+      nixVimPackage =
+        if cfg.neovim.lite
+        then nixvimPkgs.lite
+        else nixvimPkgs.default;
+    in {
       packages = with pkgs; [
-        inputs.nixvim.packages.${system}.default
+        nixVimPackage
         fd
         gnused
         unzip
