@@ -1,15 +1,19 @@
-{stateVersion, ...}: {
-  imports = [
-    ../../../modules/home/console
-    ../../../modules/home/desktop/wezterm.nix
-  ];
-
+_: {
   programs = {
     home-manager.enable = true;
   };
+
+  mgnix.apps = {
+    console = {
+      git = {
+        userName = "Martin Gondermann";
+        email = "martin.gondermann@bayoo.net";
+      };
+    };
+  };
+
   home = {
-    inherit stateVersion;
-    username = "martin.gondermann";
+    stateVersion = "23.11";
     homeDirectory = "/Users/martin.gondermann";
     sessionVariables = {
       ANDROID_SDK = "~/Library/Android/sdk";
@@ -18,6 +22,4 @@
       "~/.dotnet/tools"
     ];
   };
-
-  sys.software.wezterm.enable = true;
 }

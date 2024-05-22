@@ -13,29 +13,24 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
 
-  outputs = {
-    self,
-    home-manager,
-    darwin,
-    nixvim,
-    nixpkgs,
-  } @ inputs: let
-    stateVersion = "23.11";
-    system = "aarch64-darwin";
-  in {
-    darwinConfigurations = {
-      MACBOOK008 = darwin.lib.darwinSystem {
-        inherit system;
-        specialArgs = {
-          inherit stateVersion system inputs;
-        };
-        modules = [
-          home-manager.darwinModules.home-manager
-          ./systems/${system}/MACBOOK008
-        ];
-      };
+    snowfall-lib = {
+      url = "github:snowfallorg/lib";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs = inputs:
+    inputs.snowfall-lib.mkFlake {
+      inherit inputs;
+      src = ./.;
+
+      snowfall = {
+        namespace = "mgnix";
+        meta = {
+          name = "mgnix";
+          title = "My MacOS config";
+        };
+      };
+    };
 }

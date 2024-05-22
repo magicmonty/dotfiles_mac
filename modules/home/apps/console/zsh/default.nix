@@ -1,16 +1,5 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-with lib; {
+{pkgs, ...}: {
   config = {
-    home = {
-      file."bin/brn".source = ./brn;
-      file."bin/tm".source = ./tm;
-    };
-
     programs.zsh = {
       enable = true;
       autocd = true;

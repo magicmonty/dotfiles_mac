@@ -4,14 +4,16 @@
   config,
   ...
 }:
-with lib; let
-  cfg = config.sys.software.wezterm;
-in {
-  options.sys.software.wezterm = {
-    enable = mkEnableOption "WezTerm";
+with lib; {
+  options.mgnix.apps.desktop.wezterm = {
+    enable = mkOption {
+      description = "Whether to enable WezTerm";
+      type = types.bool;
+      default = true;
+    };
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf config.mgnix.apps.desktop.wezterm.enable {
     programs.wezterm = {
       enable = true;
       enableZshIntegration = true;
@@ -49,7 +51,7 @@ in {
         end
 
         -- Tab Bar
-        
+          
         local function tab_title(tab_info)
           local title = tab_info.tab_title
           if not title or #title == 0 then
@@ -206,79 +208,79 @@ in {
           ssh_domains = {},
         }'';
 
-        colorSchemes = {
-          nightfox = {
-            foreground = "#cdcecf";
-            background = "#192330";
-            cursor_bg = "#cdcecf";
-            cursor_border = "#cdcecf";
-            cursor_fg = "#192330";
-            compose_cursor = "#f4a261";
-            selection_bg = "#2b3b51";
-            selection_fg = "#cdcecf";
-            scrollbar_thumb = "#71839b";
-            split = "#131a24";
-            visual_bell = "#cdcecf";
-            ansi = ["#393b44" "#c94f6d" "#81b29a" "#dbc074" "#719cd6" "#9d79d6" "#63cdcf" "#dfdfe0"];
-            brights = ["#575860" "#d16983" "#8ebaa4" "#e0c989" "#86abdc" "#baa1e2" "#7ad5d6" "#e4e4e5"];
+      colorSchemes = {
+        nightfox = {
+          foreground = "#cdcecf";
+          background = "#192330";
+          cursor_bg = "#cdcecf";
+          cursor_border = "#cdcecf";
+          cursor_fg = "#192330";
+          compose_cursor = "#f4a261";
+          selection_bg = "#2b3b51";
+          selection_fg = "#cdcecf";
+          scrollbar_thumb = "#71839b";
+          split = "#131a24";
+          visual_bell = "#cdcecf";
+          ansi = ["#393b44" "#c94f6d" "#81b29a" "#dbc074" "#719cd6" "#9d79d6" "#63cdcf" "#dfdfe0"];
+          brights = ["#575860" "#d16983" "#8ebaa4" "#e0c989" "#86abdc" "#baa1e2" "#7ad5d6" "#e4e4e5"];
 
-            indexed = {
-              "16" = "#d67ad2";
-              "17" = "#f4a261";
+          indexed = {
+            "16" = "#d67ad2";
+            "17" = "#f4a261";
+          };
+
+          tab_bar = {
+            background = "#131a24";
+            inactive_tab_edge = "#131a24";
+            inactive_tab_edge_hover = "#212e3f";
+
+            active_tab = {
+              bg_color = "#71839b";
+              fg_color = "#192330";
+              intensity = "Normal";
+              italic = false;
+              strikethrough = false;
+              underline = "None";
             };
 
-            tab_bar = {
-              background = "#131a24";
-              inactive_tab_edge = "#131a24";
-              inactive_tab_edge_hover = "#212e3f";
+            inactive_tab = {
+              bg_color = "#212e3f";
+              fg_color = "#aeafb0";
+              intensity = "Normal";
+              italic = false;
+              strikethrough = false;
+              underline = "None";
+            };
 
-              active_tab = {
-                bg_color = "#71839b";
-                fg_color = "#192330";
-                intensity = "Normal";
-                italic = false;
-                strikethrough = false;
-                underline = "None";
-              };
-        
-              inactive_tab = {
-                bg_color = "#212e3f";
-                fg_color = "#aeafb0";
-                intensity = "Normal";
-                italic = false;
-                strikethrough = false;
-                underline = "None";
-              };
+            inactive_tab_hover = {
+              bg_color = "#29394f";
+              fg_color = "#cdcecf";
+              intensity = "Normal";
+              italic = false;
+              strikethrough = false;
+              underline = "None";
+            };
 
-              inactive_tab_hover = {
-                bg_color = "#29394f";
-                fg_color = "#cdcecf";
-                intensity = "Normal";
-                italic = false;
-                strikethrough = false;
-                underline = "None";
-              };
+            new_tab = {
+              bg_color = "#192330";
+              fg_color = "#aeafb0";
+              intensity = "Normal";
+              italic = false;
+              strikethrough = false;
+              underline = "None";
+            };
 
-              new_tab = {
-                bg_color = "#192330";
-                fg_color = "#aeafb0";
-                intensity = "Normal";
-                italic = false;
-                strikethrough = false;
-                underline = "None";
-              };
-
-              new_tab_hover = {
-                bg_color = "#29394f";
-                fg_color = "#cdcecf";
-                intensity = "Normal";
-                italic = false;
-                strikethrough = false;
-                underline = "None";
-              };
+            new_tab_hover = {
+              bg_color = "#29394f";
+              fg_color = "#cdcecf";
+              intensity = "Normal";
+              italic = false;
+              strikethrough = false;
+              underline = "None";
             };
           };
         };
+      };
     };
   };
 }
