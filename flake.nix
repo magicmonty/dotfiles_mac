@@ -33,7 +33,7 @@
         };
         modules = [
           home-manager.darwinModules.home-manager
-          ./hosts/macbook008.nix
+          ./systems/${system}/MACBOOK008
         ];
       };
     };
