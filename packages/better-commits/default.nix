@@ -5,16 +5,16 @@
 }:
 buildNpmPackage rec {
   pname = "better-commits";
-  version = "1.14.0";
+  version = "1.15.7";
 
   src = fetchFromGitHub {
     owner = "Everduin94";
     repo = "better-commits";
     rev = "v${version}";
-    hash = "sha256-zhLaqX2qgj+pPOj3nb7nL28wfBSsv1nQFBh7wV9uxcY=";
+    hash = "sha256-xPcjBxKZlbGFb52gYoOs7/M8ZuLrzgReoYMaKCAsWxg=";
   };
 
-  npmDepsHash = "sha256-XNg+EPX2QGdavsK9aG5/BIr35oa3ssRAP5wFB3RXJX0=";
+  npmDepsHash = "sha256-g34UutgT5315BpsQSuGGLIU6Ga+hpEz74HNLKKOB+ec=";
 
   meta = with lib; {
     description = "Better commits";

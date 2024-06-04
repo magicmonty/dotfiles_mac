@@ -39,7 +39,7 @@ with lib; {
         delta
         less
         cz-cli
-        #        better-commits
+        mgnix.better-commits
         (mkIf lazygit.enable pkgs.lazygit)
       ];
 

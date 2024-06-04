@@ -2,11 +2,11 @@
   description = "My MacOS config";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixpkgs-23.11-darwin";
+    nixpkgs.url = "nixpkgs/nixpkgs-24.05-darwin";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:magicmonty/nixvim";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -33,6 +33,7 @@
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
       src = ./.;
+      package-namespace = "mgnix";
 
       snowfall = {
         namespace = "mgnix";
