@@ -106,7 +106,7 @@ with lib; {
         bind - split-window -v -c "#{pane_current_path}"
 
         # open lazygit in new window
-        bind g new-window -c "#{pane_current_path}" lazygit
+        ${optionalString config.mgnix.apps.console.git.lazygit.enable "bind g new-window -c \"#{pane_current_path}\" lazygit"}
 
         # Set path for newly created windows too
         bind c new-window -c "#{pane_current_path}"

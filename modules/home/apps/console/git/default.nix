@@ -4,19 +4,10 @@
   pkgs,
   ...
 }:
-with lib; {
+with lib;
+with lib.mgnix; {
   options.mgnix.apps.console.git = {
-    enable = mkOption {
-      description = "Whether to enable Git";
-      type = types.bool;
-      default = true;
-    };
-
-    lazygit.enable = mkOption {
-      description = "Whether to enable LazyGit";
-      type = types.bool;
-      default = true;
-    };
+    enable = mkBoolOption true "Whether to enable Git";
 
     userName = mkOption {
       description = "Git user name";
@@ -32,34 +23,60 @@ with lib; {
   };
 
   config = let
-    inherit (config.mgnix.apps.console.git) enable lazygit userName email;
+    inherit (config.mgnix.apps.console.git) enable userName email;
+    aliases = {
+      g = "git";
+      gci = "git commit";
+      gcim = "git commit --message";
+      gcima = "git commit --all --message";
+      gcz = "git cz";
+      gs = "git status";
+      gst = "git status";
+      gstu = "git status --untracked-files=no";
+      amend = "git commit --amend --no-edit";
+      reword = "git commit --amend --message";
+      gu = "git reset HEAD~1";
+      grh = "git reset --hard";
+      ga = "git add";
+      gaa = "git add --all";
+      unstage = "git reset HEAD";
+      gco = "git checkout";
+      gb = "git branch --sort=-committerdate | fzf --header \"Checkout Recent Branch\" --preview \"git diff --color=always {1} | delta\" --pointer=\"\" | xargs git checkout";
+      gbr = "git branch";
+      gbrs = "git branch --all -verbose";
+      gp = "git push";
+      gpush = "git push";
+      gpushf = "git push --force-with-lease";
+      gpull = "git pull";
+      gpf = "git push --force-with-lease";
+      gra = "git rebase --abort";
+      grc = "git rebase --continue";
+      grv = "git remote --verbose";
+      gd = "git diff";
+      gdc = "git diff --staged";
+      gshow = "git diff --staged";
+      gdt = "git difftool";
+      gmt = "git mergetool";
+      unresolve = "git checkout --conflict=merge";
+      gll = "git log";
+      gl = "git log --oneline --max-count=15";
+      gld = "git log --oneline --max-count=15 --decorate";
+      ggl = "git log --graph --oneline --decorate --branches --all";
+      hsit = "git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short";
+      gls = "git log --graph --oneline --decorate --all --color=always | fzf --ansi +s --preview='git show --color=always {2}' --bind='ctrl-d:preview-page-down' --bind='ctrl-u:preview-page-up' --bind='enter:execute:git show --color=always {2} | less -R' --bind='ctrl-x:execute:git checkout {2} .'";
+      wdw = "git wdw";
+      most-changed = "git log --format=%n --name-only | grep -v '^$' | sort | uniq -c |--numeric-sort --reverse | head -n 50";
+      gcleanf = "git cleanf -xdf";
+    };
   in
     mkIf enable {
       home.packages = with pkgs; [
         delta
         less
         cz-cli
-        mgnix.better-commits
-        (mkIf lazygit.enable pkgs.lazygit)
       ];
 
       programs = {
-        lazygit = mkIf lazygit.enable {
-          enable = true;
-          settings = {
-            gui = {
-              showIcons = true;
-              showRandomTip = false;
-              nerdFontsVersion = "3";
-            };
-            update = {
-              method = "never";
-            };
-            disableStartupPopups = true;
-            notARepository = "quit";
-          };
-        };
-
         git = {
           enable = true;
           userName = "${userName}";
@@ -181,6 +198,9 @@ with lib; {
             };
           };
         };
+
+        zsh.shellAliases = aliases;
+        bash.shellAliases = aliases;
       };
     };
 }

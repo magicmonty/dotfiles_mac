@@ -21,6 +21,12 @@ with lib; {
 
   config = let
     inherit (config.mgnix.apps.console.neovim) enable package;
+    aliases = {
+      v = "nvim";
+      vim = "nvim";
+      vi = "nvim";
+      vimdiff = "nvim -d";
+    };
   in
     mkIf enable {
       home = {
@@ -32,6 +38,11 @@ with lib; {
           EDITOR = "nvim";
           VISUAL = "nvim";
         };
+      };
+
+      programs = {
+        zsh.shellAliases = aliases;
+        bash.shellAliases = aliases;
       };
     };
 }
