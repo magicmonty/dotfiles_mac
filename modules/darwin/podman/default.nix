@@ -15,5 +15,9 @@ with lib; {
     environment.systemPackages = with pkgs; [
       podman-compose
     ];
+
+    homebrew.casks = [
+      "podman-desktop"
+    ];
   };
 }

@@ -35,7 +35,6 @@ _: {
       "microsoft-auto-update" # Needed for auto-Updating Teams and Outlook
       "microsoft-teams"
       "microsoft-outlook"
-      "podman-desktop"
       "postman"
       "raycast"
       "sf-symbols"
