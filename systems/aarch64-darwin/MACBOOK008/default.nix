@@ -20,5 +20,6 @@ with lib.mgnix; {
     apps = {
       podman = enabled;
     };
+    theming.theme = "nightfox";
   };
 }

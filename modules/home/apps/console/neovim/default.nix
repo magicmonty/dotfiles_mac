@@ -1,5 +1,6 @@
 {
   config,
+  osConfig,
   lib,
   pkgs,
   ...
@@ -14,7 +15,9 @@ with lib; {
 
     package = mkOption {
       type = types.package;
-      default = pkgs.neovim-lite;
+      default = pkgs.neovim-lite.nixvimExtend {
+        config.theme = osConfig.mgnix.theming.theme;
+      };
       description = "The package to use for neovim.";
     };
   };
