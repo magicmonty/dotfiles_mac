@@ -15,24 +15,24 @@ with lib; {
 
   config = let
     inherit (config.mgnix.theming) theme;
+    image = ./${theme}.png;
   in {
     system.activationScripts.postActivation.text =
       # bash
       ''
-        osascript -e 'set desktopImage to POSIX file "${pkgs.mgnix.wallpapers}/${theme}.png"
+        osascript -e 'set desktopImage to POSIX file "${image}"
         tell application "Finder"
           set desktop picture to desktopImage
         end tell'
       '';
-
     stylix = {
       polarity = lib.mkDefault "dark";
-      image = lib.mkDefault ./wall.png;
+      image = lib.mkDefault image;
       base16Scheme = lib.mkDefault ./${theme}.yaml;
       autoEnable = lib.mkDefault false;
       homeManagerIntegration = {
         followSystem = true;
-        autoImport = false;
+        autoImport = true;
       };
 
       fonts = {
@@ -53,6 +53,11 @@ with lib; {
         emoji = {
           package = pkgs.noto-fonts-emoji;
           name = "Noto Color Emoji";
+        };
+
+        sizes = {
+          terminal = 18;
+          popups = 14;
         };
       };
     };
