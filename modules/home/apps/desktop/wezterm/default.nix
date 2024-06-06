@@ -51,7 +51,7 @@ with lib; {
         end
 
         -- Tab Bar
-          
+        
         local function tab_title(tab_info)
           local title = tab_info.tab_title
           if not title or #title == 0 then
