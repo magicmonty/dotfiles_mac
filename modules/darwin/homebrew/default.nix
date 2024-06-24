@@ -16,7 +16,6 @@ _: {
       "scrcpy"
     ];
     casks = [
-      "activitywatch"
       "alt-tab"
       "android-platform-tools"
       "azure-data-studio"

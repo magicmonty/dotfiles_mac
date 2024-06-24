@@ -7,9 +7,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-    p7zip
+    btop
     fd
     gnused
+    p7zip
     unzip
   ];
 }
