@@ -5,7 +5,8 @@
   pkgs,
   ...
 }:
-with lib; {
+with lib;
+with lib.mgnix; {
   options.mgnix.apps.console.neovim = {
     enable = mkOption {
       description = "Whether to enable neovim.";
@@ -16,7 +17,26 @@ with lib; {
     package = mkOption {
       type = types.package;
       default = pkgs.neovim-lite.nixvimExtend {
-        config.theme = osConfig.mgnix.theming.theme;
+        config = {
+          inherit (osConfig.mgnix.theming) theme;
+          plugins = {
+            luasnip.fromLua = [
+              {paths = ./snippets;}
+            ];
+            lsp.servers.sourcekit = {
+              enable = true;
+              settings = {
+                capabilities = {
+                  workspace = {
+                    didChangeWatchedFiles = {
+                      dynamicRegistration = true;
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
       };
       description = "The package to use for neovim.";
     };
