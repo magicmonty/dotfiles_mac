@@ -22,6 +22,7 @@ _: {
       "beyond-compare"
       "dotnet-sdk"
       "enpass"
+      "figma"
       "firefox"
       "fork" # GIT Client
       "gimp"
