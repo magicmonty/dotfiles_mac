@@ -1,0 +1,121 @@
+set number
+set relativenumber
+
+"" -- Suggested options --
+" show a few lines of context around the cursor
+set scrolloff=10 sidescrolloff=10
+
+" do incremental searching
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+
+set gdefault " substitute all matches in a line by default
+set history=10000
+
+set clipboard=unnamedplus,unnamed,ideaput
+
+let mapleader = ' '
+
+map <leader>vv :e ~/.ideavimrc<CR>
+map <leader>vr :source ~/.ideavimrc<CR>
+
+map <c-y> :action ActivateTerminalToolWindow<CR>
+
+nnoremap <leader>- :action SplitHorizontally<CR>
+nnoremap <leader># :action SplitVertically<CR>
+nnoremap <leader>= :action Unsplit<CR>
+
+sethandler <c-j> Vim
+sethandler <c-k> Vim
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+" Don't use ex mode, use Q for formatting
+map Q gq
+
+map <leader>. :NERDTreeToggle<CR>
+nmap ä ]
+nmap ö [
+
+nnoremap <leader>/ :nohls<return><esc>;
+
+nmap gr :action ShowUsages<CR>
+nmap gi :action GotoImplementation<CR>
+nmap gs :action GotoSuperMethod<CR>
+nmap gC :action GotoClass<CR>
+nmap gd :action GotoDeclaration<CR>
+nmap gu :action FindUsages<CR>
+
+nmap <leader>bn :action NextTab<CR>
+nmap <leader>bp :action PreviousTab<CR>
+nmap <leader>bd :action CloseContent<CR>
+
+nmap <leader>ri :action Inline<CR>
+nmap <leader>rr :action Refactorings.QuickListPopupAction<CR>
+nmap <leader>rn :action RenameElement<CR>
+nmap <leader>rs :action ChangeSignature<CR>
+nmap <leader>rv :action IntroduceVariable<CR>
+nmap <leader>rm :action ExtractMethod<CR>
+nmap <leader>ro :action OptimizeImports<CR>
+nmap <leader>rg :action Generate<CR>
+nmap <leader>f :action ReformatCode<CR>
+
+nmap <leader>ur :action RiderUnitTestRunContextAction<CR>
+nmap <leader>ud :action RiderUnitTestDebugContextAction<CR>
+nmap <leader>ul :action RiderUnitTestRunSolutionAction<CR>
+nmap <leader>uu :action RiderUnitTestRunCurrentSessionAction<CR>
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+
+nnoremap öd :action GotoPreviousError<CR>
+nnoremap äd :action GotoNextError<CR>
+
+nnoremap öö :action MethodUp<CR>
+nnoremap ää :action MethodDown<CR>
+
+nnoremap <leader>p :action Back<CR>
+nnoremap <leader>n :action Forward<CR>
+
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+
+inoremap jk <Esc>
+
+vnoremap < <gv
+vnoremap > >gv
+
+" Popup navigation
+inoremap <C-j> <Action>(PopupMenu-selectNext)
+inoremap <C-k> <Action>(PopupMenu-selectPrev)
+
+map <leader>c :action CommentByLineComment<CR>
+
+" Jump around with easymotion
+map <leader>j <Plug>(easymotion-s)
+
+map <leader>ca <Action>(ShowIntentionActions)
+
+
+" Plugins
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-multiple-cursors'
+packadd matchit
+
+set multiple-cursors
+set commentary
+set surround
+set ideajoin
+set highlightedyank
+set nerdtree
+set easymotion
+set notimeout
+set which-key
