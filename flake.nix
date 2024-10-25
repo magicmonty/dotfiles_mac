@@ -4,9 +4,8 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixpkgs-24.05-darwin";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixvim = {
-      url = "github:magicmonty/nixvim";
-    };
+    nixvim.url = "github:magicmonty/nixvim";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -16,25 +16,13 @@ with lib.mgnix; {
 
     package = mkOption {
       type = types.package;
-      default = pkgs.neovim-lite.nixvimExtend {
+      default = pkgs.neovim-lite.extend {
         config = {
           inherit (osConfig.mgnix.theming) theme;
           plugins = {
             luasnip.fromLua = [
               {paths = ./snippets;}
             ];
-            lsp.servers.sourcekit = {
-              enable = true;
-              settings = {
-                capabilities = {
-                  workspace = {
-                    didChangeWatchedFiles = {
-                      dynamicRegistration = true;
-                    };
-                  };
-                };
-              };
-            };
           };
         };
       };
