@@ -4,8 +4,8 @@
     settings = {
       cores = 0;
       max-jobs = 10;
-      auto-optimise-store = true;
     };
+    optimise.automatic = true;
     gc = {
       automatic = true;
       options = "-d";

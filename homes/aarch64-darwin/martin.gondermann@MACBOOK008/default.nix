@@ -16,10 +16,10 @@ _: {
     stateVersion = "24.05";
     homeDirectory = "/Users/martin.gondermann";
     sessionVariables = {
-      ANDROID_SDK = "~/Library/Android/sdk";
+      ANDROID_SDK = "$HOME/Library/Android/sdk";
     };
     sessionPath = [
-      "~/.dotnet/tools"
+      "$HOME/.dotnet/tools"
     ];
   };
 }

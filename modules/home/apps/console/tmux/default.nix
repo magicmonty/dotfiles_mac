@@ -21,8 +21,8 @@ with lib; {
       mouse = true;
       aggressiveResize = true;
       resizeAmount = 5;
-      prefix = "C-Space";
-      shortcut = "Space";
+      prefix = "C-x";
+      shortcut = "x";
       terminal = "tmux-256color";
       secureSocket = true;
       plugins = with pkgs; [
@@ -121,7 +121,7 @@ with lib; {
 
         # Enter copy mode with "PREFIX+C-Space"
         unbind [
-        bind C-Space copy-mode
+        bind C-a copy-mode
 
         # Setup 'v' to begin selection as in Vim
         bind-key -T copy-mode-vi v send-keys -X begin-selection

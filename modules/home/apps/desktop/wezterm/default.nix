@@ -179,7 +179,7 @@ with lib; {
                 })
               },
             },
-            leader = { key = 'Space', mods = 'CTRL|SHIFT', timeout_milliseconds = 1000 },
+            leader = { key = 'y', mods = 'CTRL', timeout_milliseconds = 1000 },
             warn_about_missing_glyphs = false,
             window_decorations = 'INTEGRATED_BUTTONS|RESIZE',
             launch_menu = {},
