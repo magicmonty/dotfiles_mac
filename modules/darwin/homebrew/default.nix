@@ -1,6 +1,7 @@
 _: {
   homebrew = let
     aerospace-tap = "nikitabobko/tap";
+    sketchybar-tap = "FelixKratz/formulae";
   in {
     enable = true;
     brewPrefix = "/opt/homebrew/bin";
@@ -11,14 +12,17 @@ _: {
     };
     taps = [
       aerospace-tap
+      sketchybar-tap
     ];
     brews = [
       "azure-cli"
       "gnu-sed"
+      "gnutls"
       "krb5"
       "podman"
       "podman-compose"
       "scrcpy"
+      "sketchybar"
     ];
     casks = [
       "alt-tab"

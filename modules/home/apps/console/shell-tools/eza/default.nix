@@ -11,6 +11,8 @@ with lib.mgnix; {
     inherit (config.mgnix.apps.console.eza) enable;
     aliases = {
       l = "eza --git --icons -lha --color-scale";
+      lt = "eza --tree --level=2 --git --icons --color-scale";
+      ltree = "eza --tree --level=2 --long --git --icons --color-scale";
     };
   in
     mkIf enable {
