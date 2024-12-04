@@ -2,12 +2,12 @@
   description = "My MacOS config";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixpkgs-24.05-darwin";
+    nixpkgs.url = "nixpkgs/nixpkgs-24.11-darwin";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:magicmonty/nixvim";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -22,7 +22,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:danth/stylix/release-24.05";
       inputs = {
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";

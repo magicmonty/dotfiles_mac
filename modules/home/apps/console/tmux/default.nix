@@ -134,6 +134,10 @@ with lib; {
         # split panes evenly
         bind e select-layout even-horizontal
 
+        # Work around for default shell
+        set -gu default-command
+        set -g default-shell "$SHELL"
+
         ################################################################
         #### Status bar
         ################################################################

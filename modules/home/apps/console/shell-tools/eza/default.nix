@@ -20,7 +20,7 @@ with lib.mgnix; {
         eza = {
           enable = true;
           git = true;
-          icons = true;
+          icons = "auto";
           enableZshIntegration = true;
           enableBashIntegration = true;
         };
