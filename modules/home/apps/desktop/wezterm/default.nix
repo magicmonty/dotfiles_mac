@@ -148,7 +148,7 @@ with lib; {
               { key = 'r', mods = 'LEADER', action = act.ActivateKeyTable({ name = resize_pane, one_shot = false }) },
               -- <Leader>g or <Ctrl>g opens a new Tab with lazygit
               { key = 'g', mods = 'LEADER', action = act.SpawnCommandInNewTab({ args = { '${pkgs.lazygit}/bin/lazygit' } }) },
-              { key = 'g', mods = 'CTRL', action = act.SpawnCommandInNewTab({ args = { '${pkgs.lazygit}/bin/lazygit' } }) },
+              { key = 'g', mods = 'CTRL|SHIFT', action = act.SpawnCommandInNewTab({ args = { '${pkgs.lazygit}/bin/lazygit' } }) },
 
               -- <Leader>t opens a new tab
               { key = 't', mods = 'LEADER', action = act.SpawnTab('CurrentPaneDomain') },
