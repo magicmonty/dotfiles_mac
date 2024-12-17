@@ -44,6 +44,7 @@ with lib; {
 
         # Allow automatic renaming of windows
         set -g allow-rename on
+        set -g allow-passthrough on
 
         # Renumber windows when one is removed
         set -g renumber-windows on
