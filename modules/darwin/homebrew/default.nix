@@ -34,6 +34,7 @@ _: {
       "figma"
       "firefox"
       "fork" # GIT Client
+      "ghostty"
       "gimp"
       "google-chrome"
       "hiddenbar"
@@ -51,7 +52,6 @@ _: {
       "vnc-viewer"
       "tunnelblick"
       "visual-studio-code"
-      "wezterm"
       "${aerospace-tap}/aerospace"
     ];
   };
