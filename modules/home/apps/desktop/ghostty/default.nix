@@ -33,6 +33,7 @@ with lib.mgnix; {
         background-blur-radius = 20
         clipboard-read = allow
         clipboard-write = allow
+        quit-after-last-window-closed = true
         keybind = ctrl+x>c=new_tab
         keybind = ctrl+x>n=next_tab
         keybind = ctrl+x>p=previous_tab
