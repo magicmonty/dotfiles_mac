@@ -9,7 +9,11 @@
   environment.systemPackages = with pkgs; [
     btop
     fd
+    figlet
     gnused
+    imagemagick
+    markdownlint-cli2
+    mermaid-cli
     p7zip
     unzip
   ];

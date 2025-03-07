@@ -17,6 +17,7 @@ _: {
     homeDirectory = "/Users/martin.gondermann";
     sessionVariables = {
       ANDROID_SDK = "$HOME/Library/Android/sdk";
+      PUPPETEER_EXECUTABLE_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
     };
     sessionPath = [
       "$HOME/.dotnet/tools"
