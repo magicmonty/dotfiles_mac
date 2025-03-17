@@ -22,9 +22,15 @@
 
 - Update Flake
   ```sh
-  nix flake update
+  just update
   ```
 - Install changes:
   ```sh
-  darwin-rebuild switch --flake .
+  just rebuild
   ```
+
+or combine both:
+  ```sh
+  just rebuild-update
+  ```
+
