@@ -12,6 +12,7 @@
     figlet
     gnused
     imagemagick
+    just
     markdownlint-cli2
     mermaid-cli
     p7zip
