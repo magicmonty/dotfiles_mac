@@ -13,7 +13,7 @@ clean:
 
 update:
   nix flake update
-  git add .
+  git add flake.*
   git commit -m "Update flake"
 
 rebuild-update: update rebuild
