@@ -46,6 +46,7 @@ _: {
       "microsoft-teams"
       "microsoft-outlook"
       "obsidian"
+      "microsoft-openjdk@21"
       "postman"
       "raycast"
       "sf-symbols"
