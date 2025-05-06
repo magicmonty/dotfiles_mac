@@ -13,8 +13,7 @@
     gnused
     imagemagick
     just
-    markdownlint-cli2
-    mermaid-cli
+    # markdownlint-cli2
     p7zip
     unzip
   ];

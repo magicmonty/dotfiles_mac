@@ -33,6 +33,7 @@ _: {
       "bruno"
       "citrix-workspace"
       "dotnet-sdk"
+      "drawio"
       "enpass"
       "figma"
       "firefox"

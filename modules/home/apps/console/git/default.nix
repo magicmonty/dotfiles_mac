@@ -29,7 +29,6 @@ with lib.mgnix; {
       gci = "git commit";
       gcim = "git commit --message";
       gcima = "git commit --all --message";
-      gcz = "git cz";
       gs = "git status";
       gst = "git status";
       gstu = "git status --untracked-files=no";
@@ -73,7 +72,6 @@ with lib.mgnix; {
       home.packages = with pkgs; [
         delta
         less
-        cz-cli
       ];
 
       programs = {
