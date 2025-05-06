@@ -5,7 +5,7 @@ pre-rebuild:
   git add *.nix
 
 rebuild: pre-rebuild
-  darwin-rebuild switch --flake .
+  darwin-rebuild switch --impure --flake .
 
 clean:
   nix-collect-garbage -d
