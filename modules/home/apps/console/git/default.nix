@@ -66,6 +66,7 @@ with lib.mgnix; {
       wdw = "git wdw";
       most-changed = "git log --format=%n --name-only | grep -v '^$' | sort | uniq -c |--numeric-sort --reverse | head -n 50";
       gcleanf = "git cleanf -xdf";
+      gsc = "git switch -c";
     };
   in
     mkIf enable {
@@ -83,6 +84,8 @@ with lib.mgnix; {
             s = "status";
             st = "status";
             stu = "status --untracked-files=no";
+
+            sc = "switch -c";
 
             ci = "commit";
             cim = "commit --message";
