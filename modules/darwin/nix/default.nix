@@ -1,5 +1,7 @@
 {pkgs, ...}: {
+  ids.gids.nixbld = 30000;
   nix = {
+    enable = true;
     package = pkgs.nixVersions.stable;
     settings = {
       cores = 0;
@@ -12,6 +14,4 @@
     };
     extraOptions = "experimental-features = nix-command flakes";
   };
-
-  services.nix-daemon.enable = true;
 }

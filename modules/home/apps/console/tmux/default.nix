@@ -153,7 +153,7 @@ with lib; {
     };
 
     zsh = {
-      initExtra = ''
+      initContent = ''
         function tmux_start () {
 
           MUX=${pkgs.tmux}/bin/tmux

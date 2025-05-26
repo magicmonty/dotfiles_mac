@@ -1,6 +1,6 @@
 _: {
   programs.zsh = {
-    initExtra = ''
+    initContent = ''
       export NVM_DIR="$HOME/.nvm"
 
       # load NVM

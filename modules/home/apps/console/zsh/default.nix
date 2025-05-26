@@ -44,50 +44,56 @@ with lib.mgnix; {
           }
         ];
 
-        initExtraFirst = ''
-          if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi
-        '';
+        initContent = lib.mkMerge [
+          (
+            lib.mkBefore ''
+              if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi
+            ''
+          )
 
-        initExtraBeforeCompInit = ''
-          zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
-          zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-          zstyle ':completion:*' rehash true                              # automatically find new executables in path
-          # Speed up completions
-          zstyle ':completion:*' accept-exact '*(N)'
-          zstyle ':completion:*' use-cache on
-          zstyle ':completion:*' cache-path ~/.zsh/cache
-        '';
+          (
+            lib.mkOrder 550 ''
+              zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+              zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+              zstyle ':completion:*' rehash true                              # automatically find new executables in path
+              # Speed up completions
+              zstyle ':completion:*' accept-exact '*(N)'
+              zstyle ':completion:*' use-cache on
+              zstyle ':completion:*' cache-path ~/.zsh/cache
+            ''
+          )
 
-        initExtra = ''
-          ## Options section
-          setopt correct                                                  # Auto correct mistakes
-          setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
-          setopt nocaseglob                                               # Case insensitive globbing
-          setopt rcexpandparam                                            # Array expension with parameters
-          setopt nocheckjobs                                              # Don't warn about running processes when exiting
-          setopt numericglobsort                                          # Sort filenames numerically when it makes sense
-          setopt nobeep                                                   # No beep
-          setopt appendhistory                                            # Immediately append history instead of overwriting
-          setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
+          ''
+            ## Options section
+            setopt correct                                                  # Auto correct mistakes
+            setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
+            setopt nocaseglob                                               # Case insensitive globbing
+            setopt rcexpandparam                                            # Array expension with parameters
+            setopt nocheckjobs                                              # Don't warn about running processes when exiting
+            setopt numericglobsort                                          # Sort filenames numerically when it makes sense
+            setopt nobeep                                                   # No beep
+            setopt appendhistory                                            # Immediately append history instead of overwriting
+            setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
 
-          # Don't consider certain characters part of the word
-          WORDCHARS=''${WORDCHARS//\/[&.;]}
+            # Don't consider certain characters part of the word
+            WORDCHARS=''${WORDCHARS//\/[&.;]}
 
-          if [ -e $HOME/.defaultapps ]; then
-            source $HOME/.defaultapps
-          fi
+            if [ -e $HOME/.defaultapps ]; then
+              source $HOME/.defaultapps
+            fi
 
-          bindkey '^[[1;5D' backward-word
-          bindkey '^[[1;5C' forward-word
+            bindkey '^[[1;5D' backward-word
+            bindkey '^[[1;5C' forward-word
 
-          export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+            export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
 
-          fcd() { cd "$(find . -type d -not -path '*/.*' | fzf)" }
-          f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
-          fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
+            fcd() { cd "$(find . -type d -not -path '*/.*' | fzf)" }
+            f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
+            fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
 
-          eval "$(/opt/homebrew/bin/brew shellenv)"
-        '';
+            eval "$(/opt/homebrew/bin/brew shellenv)"
+          ''
+        ];
       };
     };
 }

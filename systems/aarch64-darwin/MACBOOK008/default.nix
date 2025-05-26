@@ -6,9 +6,8 @@ with lib.mgnix; {
     home = "/Users/martin.gondermann";
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
-
   system = {
+    primaryUser = "martin.gondermann";
     keyboard = {
       enableKeyMapping = true;
       remapCapsLockToEscape = true;
