@@ -15,6 +15,7 @@
     just
     # markdownlint-cli2
     p7zip
+    pngpaste
     unzip
   ];
 }
