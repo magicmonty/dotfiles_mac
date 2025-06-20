@@ -56,7 +56,7 @@ _: {
       "sf-symbols"
       "tailscale"
       "vnc-viewer"
-      "tunnelblick"
+      "virtualbox"
       "visual-studio-code"
       "${aerospace-tap}/aerospace"
     ];
