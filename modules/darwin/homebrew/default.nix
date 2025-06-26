@@ -54,7 +54,7 @@ _: {
       "postman"
       "raycast"
       "sf-symbols"
-      "tailscale"
+      "tailscale-app"
       "vnc-viewer"
       "virtualbox"
       "visual-studio-code"
