@@ -50,8 +50,8 @@
 
       systems.modules.darwin = with inputs; [
         {
-	  system.stateVersion = 5;
-	}
+          system.stateVersion = 5;
+        }
         stylix.darwinModules.stylix
       ];
     };

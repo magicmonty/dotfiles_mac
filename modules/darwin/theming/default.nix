@@ -26,6 +26,7 @@ with lib; {
         end tell'
       '';
     stylix = {
+      enable = true;
       polarity = lib.mkDefault "dark";
       image = lib.mkDefault image;
       base16Scheme = lib.mkDefault ./${theme}.yaml;

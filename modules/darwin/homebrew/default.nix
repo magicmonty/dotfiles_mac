@@ -1,7 +1,5 @@
 _: {
-  homebrew = let
-    aerospace-tap = "nikitabobko/tap";
-  in {
+  homebrew = {
     enable = true;
     brewPrefix = "/opt/homebrew/bin";
     onActivation = {
@@ -9,9 +7,6 @@ _: {
       upgrade = true;
       cleanup = "uninstall";
     };
-    taps = [
-      aerospace-tap
-    ];
     brews = [
       "azure-cli"
       "gnu-sed"
@@ -50,7 +45,6 @@ _: {
       "tailscale-app"
       "vnc-viewer"
       "visual-studio-code"
-      "${aerospace-tap}/aerospace"
     ];
   };
 }
