@@ -1,7 +1,6 @@
 _: {
   homebrew = let
     aerospace-tap = "nikitabobko/tap";
-    sketchybar-tap = "FelixKratz/formulae";
   in {
     enable = true;
     brewPrefix = "/opt/homebrew/bin";
@@ -12,7 +11,6 @@ _: {
     };
     taps = [
       aerospace-tap
-      sketchybar-tap
     ];
     brews = [
       "azure-cli"
@@ -23,7 +21,6 @@ _: {
       "podman"
       "podman-compose"
       "scrcpy"
-      "sketchybar"
     ];
     casks = [
       "alt-tab"
@@ -46,17 +43,12 @@ _: {
       "jetbrains-toolbox"
       "keepassxc"
       "rectangle"
-      "microsoft-auto-update" # Needed for auto-Updating Teams and Outlook
-      "microsoft-teams"
-      "microsoft-outlook"
       "obsidian"
       "microsoft-openjdk@21"
-      "postman"
       "raycast"
       "sf-symbols"
       "tailscale-app"
       "vnc-viewer"
-      "virtualbox"
       "visual-studio-code"
       "${aerospace-tap}/aerospace"
     ];

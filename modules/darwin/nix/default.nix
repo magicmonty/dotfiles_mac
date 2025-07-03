@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-  ids.gids.nixbld = 30000;
   nix = {
     enable = true;
     package = pkgs.nixVersions.stable;

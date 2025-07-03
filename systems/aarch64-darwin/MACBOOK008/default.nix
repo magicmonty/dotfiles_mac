@@ -1,13 +1,13 @@
 {lib, ...}:
 with lib;
 with lib.mgnix; {
-  users.users."martin.gondermann" = {
-    name = "martin.gondermann";
-    home = "/Users/martin.gondermann";
+  users.users."martin.gondermannbayoo.net" = {
+    name = "martin.gondermannbayoo.net";
+    home = "/Users/martin.gondermannbayoo.net";
   };
 
   system = {
-    primaryUser = "martin.gondermann";
+    primaryUser = "martin.gondermannbayoo.net";
     keyboard = {
       enableKeyMapping = true;
       remapCapsLockToEscape = true;

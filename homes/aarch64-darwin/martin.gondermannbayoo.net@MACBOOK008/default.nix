@@ -14,7 +14,7 @@ _: {
 
   home = {
     stateVersion = "25.05";
-    homeDirectory = "/Users/martin.gondermann";
+    homeDirectory = "/Users/martin.gondermannbayoo.net";
     sessionVariables = {
       ANDROID_SDK = "$HOME/Library/Android/sdk";
       PUPPETEER_EXECUTABLE_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";

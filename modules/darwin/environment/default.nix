@@ -1,6 +1,6 @@
 _: let
   sessionVariables = {
-    ANDROID_SDK = "/Users/martin.gondermann/Library/Android/sdk";
+    ANDROID_SDK = "/Users/martin.gondermannbayoo.net/Library/Android/sdk";
     DOTNET_CLI_TELEMETRY_OPTOUT = "1";
   };
 in {

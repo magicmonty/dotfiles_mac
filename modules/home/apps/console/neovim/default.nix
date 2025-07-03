@@ -24,7 +24,7 @@ with lib.mgnix; {
               {paths = ./snippets;}
             ];
             lsp.servers.nixd.settings.options = {
-              dotfiles.expr = "(builtins.getFlake (\"github:magicmonty/dotfiles_mac\").homeConfigurations.\"martin.gondermann@MACBOOK008\".options";
+              dotfiles.expr = "(builtins.getFlake (\"github:magicmonty/dotfiles_mac\").homeConfigurations.\"martin.gondermannbayoo.net@MACBOOK008\".options";
             };
           };
         };
