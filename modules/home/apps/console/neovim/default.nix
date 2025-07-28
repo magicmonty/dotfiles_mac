@@ -16,13 +16,10 @@ with lib.mgnix; {
 
     package = mkOption {
       type = types.package;
-      default = pkgs.neovim-lite.extend {
+      default = pkgs.neovim-full.extend {
         config = {
           inherit (osConfig.mgnix.theming) theme;
           plugins = {
-            luasnip.fromLua = [
-              {paths = ./snippets;}
-            ];
             lsp.servers.nixd.settings.options = {
               dotfiles.expr = "(builtins.getFlake (\"github:magicmonty/dotfiles_mac\").homeConfigurations.\"martin.gondermannbayoo.net@MACBOOK008\".options";
             };
