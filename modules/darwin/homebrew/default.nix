@@ -23,6 +23,7 @@ _: {
       "azure-data-studio"
       "beyond-compare"
       "bruno"
+      "chatgpt"
       "citrix-workspace"
       "dotnet-sdk"
       "drawio"
