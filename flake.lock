@@ -428,11 +428,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1755024717,
-        "narHash": "sha256-UBYiXJZqgmMchFMWYKRuyw6AWeuFBBFQcBQKh6UTgfc=",
+        "lastModified": 1755068009,
+        "narHash": "sha256-gZwzctgM73mKb2vqzNyFX3o0ycZIHHzal3ck5PpNY2c=",
         "owner": "magicmonty",
         "repo": "nixvim",
-        "rev": "b9bf94cb88124c72ec67b469e11d7d033ee62bda",
+        "rev": "9e84fdab6e7ce8a9e7b3995a218f821fa1890328",
         "type": "github"
       },
       "original": {
