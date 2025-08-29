@@ -36,6 +36,7 @@ _: {
       "google-chrome"
       "inkscape"
       "jetbrains-toolbox"
+      "karabiner-elements"
       "keepassxc"
       "microsoft-auto-update"
       "microsoft-openjdk@21"
