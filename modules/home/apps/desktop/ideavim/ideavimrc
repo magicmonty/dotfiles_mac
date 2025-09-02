@@ -64,7 +64,6 @@ nmap <leader>rv :action IntroduceVariable<CR>
 nmap <leader>rm :action ExtractMethod<CR>
 nmap <leader>ro :action OptimizeImports<CR>
 nmap <leader>rg :action Generate<CR>
-nmap <leader>f :action ReformatCode<CR>
 
 nmap <leader>ur :action RiderUnitTestRunContextAction<CR>
 nmap <leader>ud :action RiderUnitTestDebugContextAction<CR>
@@ -85,7 +84,16 @@ nnoremap ää :action MethodDown<CR>
 nnoremap <leader>p :action Back<CR>
 nnoremap <leader>n :action Forward<CR>
 
-nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+nnoremap <leader>cf :action ReformatCode<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+
+nnoremap <leader>db :action ToggleLineBreakpoint<CR><C-l>
+nnoremap <leader>di :action StepInto<CR>
+nnoremap <leader>do :action StepOver<CR>
+nnoremap <leader>dO :action StepOut<CR>
+nnoremap <leader>ds :action Stop<CR>
+nnoremap <leader>dd :action Debug<CR>
+nnoremap <leader>dc :action Resume<CR>
 
 inoremap jk <Esc>
 
