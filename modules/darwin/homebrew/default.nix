@@ -13,8 +13,6 @@ _: {
       "gnutls"
       "krb5"
       "nvm"
-      "podman"
-      "podman-compose"
       "scrcpy"
     ];
     casks = [

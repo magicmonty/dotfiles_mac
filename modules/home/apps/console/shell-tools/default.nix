@@ -7,5 +7,6 @@
     ripgrep
     unzip
     wget
+    oracle-instantclient
   ];
 }

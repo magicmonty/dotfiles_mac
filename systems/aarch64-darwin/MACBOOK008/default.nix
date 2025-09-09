@@ -17,7 +17,8 @@ with lib.mgnix; {
 
   mgnix = {
     apps = {
-      podman = enabled;
+      podman = disabled;
+      docker = enabled;
     };
     theming.theme = "nightfox";
   };

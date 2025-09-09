@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 with lib; {
@@ -12,10 +11,10 @@ with lib; {
   };
 
   config = mkIf config.mgnix.apps.podman.enable {
-    environment.systemPackages = with pkgs; [
-      podman-compose
+    homebrew.brews = [
+      "podman"
+      "podman-compose"
     ];
-
     homebrew.casks = [
       "podman-desktop"
     ];

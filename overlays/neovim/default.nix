@@ -3,7 +3,7 @@
     enable = true;
     tesseract_image = "tesseract";
     tesseract_docker_host_dir = "/tmp";
-    container_runtime = "podman";
+    container_runtime = "docker";
   };
 in {
   neovim-lite = nixvim.packages.${prev.system}.lite-obsidian.extend {
