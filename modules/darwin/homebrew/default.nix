@@ -40,6 +40,7 @@ _: {
       "microsoft-openjdk@21"
       "microsoft-teams"
       "obsidian"
+      "passepartout"
       "raycast"
       "sf-symbols"
       "tailscale-app"

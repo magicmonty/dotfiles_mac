@@ -8,7 +8,6 @@
 
   environment.systemPackages = with pkgs; [
     btop
-    crush
     fd
     figlet
     gnused

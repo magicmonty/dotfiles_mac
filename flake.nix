@@ -6,8 +6,6 @@
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:magicmonty/nixvim";
 
-    nix-ai-tools.url = "github:numtide/nix-ai-tools";
-
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,22 +29,27 @@
     };
   };
 
-  outputs = inputs:
+  outputs = inputs: let
+    namespace = "mgnix";
+  in
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
       src = ./.;
-      package-namespace = "mgnix";
-
-      snowfall = {
-        namespace = "mgnix";
-        meta = {
-          name = "mgnix";
-          title = "My MacOS config";
-        };
-      };
-
+      package-namespace = namespace;
       channels-config = {
         allowUnfree = true;
+        allowUnfreePredicate = _: true;
+        allowListedLicenses = [
+          "fsl11Mit"
+        ];
+      };
+
+      snowfall = {
+        inherit namespace;
+        meta = {
+          name = namespace;
+          title = "My MacOS config";
+        };
       };
 
       systems.modules.darwin = with inputs; [
