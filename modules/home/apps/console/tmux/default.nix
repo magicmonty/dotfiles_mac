@@ -25,6 +25,7 @@ with lib; {
       shortcut = "x";
       terminal = "tmux-256color";
       secureSocket = true;
+      shell = "${pkgs.zsh}/bin/zsh";
       plugins = with pkgs; [
         tmuxPlugins.yank
         {
