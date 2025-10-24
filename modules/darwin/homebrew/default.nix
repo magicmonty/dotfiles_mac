@@ -23,7 +23,6 @@ _: {
       "bruno"
       "chatgpt"
       "citrix-workspace"
-      "dotnet-sdk"
       "drawio"
       "enpass"
       "figma"
