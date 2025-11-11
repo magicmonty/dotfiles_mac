@@ -46,13 +46,17 @@ with lib.mgnix; {
 
         initContent = lib.mkMerge [
           (
-            lib.mkBefore ''
+            lib.mkBefore
+            # sh
+            ''
               if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi
             ''
           )
 
           (
-            lib.mkOrder 550 ''
+            lib.mkOrder 550
+            # sh
+            ''
               zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
               zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
               zstyle ':completion:*' rehash true                              # automatically find new executables in path
@@ -63,6 +67,7 @@ with lib.mgnix; {
             ''
           )
 
+          # sh
           ''
             ## Options section
             setopt correct                                                  # Auto correct mistakes
@@ -91,7 +96,13 @@ with lib.mgnix; {
             f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
             fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
 
-            eval "$(/opt/homebrew/bin/brew shellenv)"
+            if [ -e $HOME/.profile ]; then
+              source $HOME/.profile
+            fi
+
+            if [ -e $HOME/.zprofile ]; then
+              source $HOME/.zprofile
+            fi
           ''
         ];
       };

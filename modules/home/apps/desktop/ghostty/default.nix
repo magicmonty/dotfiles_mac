@@ -34,6 +34,9 @@ with lib.mgnix; {
         clipboard-read = allow
         clipboard-write = allow
         quit-after-last-window-closed = true
+        macos-option-as-alt = left
+        keybind = alt+left=unbind
+        keybind = alt+right=unbind
         keybind = ctrl+x>c=new_tab
         keybind = ctrl+x>n=next_tab
         keybind = ctrl+x>p=previous_tab
