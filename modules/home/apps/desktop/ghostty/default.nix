@@ -54,7 +54,7 @@ with lib.mgnix; {
         keybind = ctrl+x>right=goto_split:right
         keybind = ctrl+x>f=toggle_fullscreen
         keybind = ctrl+x>k=toggle_split_zoom
-        keybind = ctrl+shift+c=copy_to_clopboard
+        keybind = ctrl+shift+c=copy_to_clipboard
         keybind = ctrl+shift+v=paste_from_clipboard
         keybind = ctrl+shift+alt+left=resize_split:left,10
         keybind = ctrl+shift+alt+right=resize_split:right,10
