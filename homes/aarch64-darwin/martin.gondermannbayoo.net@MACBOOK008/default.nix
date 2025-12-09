@@ -13,7 +13,7 @@ _: {
   };
 
   home = {
-    stateVersion = "25.05";
+    stateVersion = "25.11";
     homeDirectory = "/Users/martin.gondermannbayoo.net";
     sessionVariables = {
       ANDROID_SDK = "$HOME/Library/Android/sdk";

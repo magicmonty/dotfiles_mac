@@ -6,13 +6,13 @@
     container_runtime = "docker";
   };
 in {
-  neovim-lite = nixvim.packages.${prev.system}.lite-obsidian.extend {
+  neovim-lite = nixvim.packages.${prev.stdenv.hostPlatform.system}.lite-obsidian.extend {
     config.sys.lang.obsidian = config;
   };
-  neovim-full = nixvim.packages.${prev.system}.full.extend {
+  neovim-full = nixvim.packages.${prev.stdenv.hostPlatform.system}.full.extend {
     config.sys.lang.obsidian = config;
   };
-  neovim = nixvim.packages.${prev.system}.default.extend {
+  neovim = nixvim.packages.${prev.stdenv.hostPlatform.system}.default.extend {
     config.sys.lang.obsidian = config;
   };
 }

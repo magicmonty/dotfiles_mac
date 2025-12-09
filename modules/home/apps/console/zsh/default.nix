@@ -103,6 +103,8 @@ with lib.mgnix; {
             if [ -e $HOME/.zprofile ]; then
               source $HOME/.zprofile
             fi
+
+            [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
           ''
         ];
       };
