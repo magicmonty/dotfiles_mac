@@ -32,6 +32,7 @@ _: {
       "gimp"
       "google-chrome"
       "inkscape"
+      "jellyfin-media-player"
       "jetbrains-toolbox"
       "karabiner-elements"
       "keepassxc"
