@@ -44,7 +44,6 @@ _: {
       "raycast"
       "sf-symbols"
       "tailscale-app"
-      "vnc-viewer"
       "visual-studio-code"
     ];
   };
