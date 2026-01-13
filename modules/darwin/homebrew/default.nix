@@ -27,6 +27,7 @@ _: {
       "enpass"
       "figma"
       "firefox"
+      "freecad"
       "fork" # GIT Client
       "ghostty"
       "gimp"
