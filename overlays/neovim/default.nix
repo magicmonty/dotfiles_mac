@@ -10,7 +10,10 @@ in {
     config.sys.lang.obsidian = config;
   };
   neovim-full = nixvim.packages.${prev.stdenv.hostPlatform.system}.full.extend {
-    config.sys.lang.obsidian = config;
+    config.sys.lang = {
+      obsidian = config;
+      dotnet.enable = false;
+    };
   };
   neovim = nixvim.packages.${prev.stdenv.hostPlatform.system}.default.extend {
     config.sys.lang.obsidian = config;

@@ -14,6 +14,7 @@
     imagemagick
     just
     # markdownlint-cli2
+    nix-tree
     p7zip
     pngpaste
     unzip
