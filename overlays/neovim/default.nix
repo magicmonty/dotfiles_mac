@@ -12,7 +12,7 @@ in {
   neovim-full = nixvim.packages.${prev.stdenv.hostPlatform.system}.full.extend {
     config.sys.lang = {
       obsidian = config;
-      dotnet.enable = false;
+      dotnet.enable = true;
     };
   };
   neovim = nixvim.packages.${prev.stdenv.hostPlatform.system}.default.extend {
