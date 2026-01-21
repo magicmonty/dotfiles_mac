@@ -1,14 +1,48 @@
 {pkgs, ...}: {
-  xdg.configFile."zellij/layouts/compact.kdl" = {
-    enable = true;
-    text = ''
-      layout {
-        pane size=1 borderless=true {
-          plugin location="compact-bar"
+  xdg.configFile = {
+    "zellij/layouts/compact.kdl" = {
+      enable = true;
+      text = ''
+        layout {
+          pane size=1 borderless=true {
+            plugin location="compact-bar"
+          }
+          pane
         }
-        pane
-      }
-    '';
+      '';
+    };
+    "zellij/layouts/ide.kdl" = {
+      enable = true;
+      text = ''
+        layout {
+          default_tab_template {
+            pane size=1 borderless=true {
+                plugin location="compact-bar"
+            }
+            children
+          }
+
+          tab name="Editor" split_direction="horizontal" {
+            pane
+          }
+
+          tab name="AI" {
+            pane command="copilot" close_on_exit=true
+          }
+
+          tab name="GIT" {
+            pane command="lazygit" close_on_exit=true
+          }
+
+          tab name="Run" {
+            pane split_direction="vertical" {
+                pane
+                pane
+            }
+          }
+        }
+      '';
+    };
   };
   programs.zellij = let
     autostart = false;
@@ -27,6 +61,18 @@
       default_layout = "compact";
       copy_command = "pbcopy";
       copy_on_select = true;
+      keybinds = {
+        normal._children = [
+          {
+            bind = {
+              _args = ["Alt Shift n"];
+              _children = [
+                {NewPane = "Down";}
+              ];
+            };
+          }
+        ];
+      };
     };
   };
 }
