@@ -502,11 +502,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1768890848,
-        "narHash": "sha256-ZkeaqrIM/di6ovjuqSstHDWWRadVZGxGYOLT7Rcycl4=",
+        "lastModified": 1768982773,
+        "narHash": "sha256-sb6B9OGyyZwork2AUqoyiJOgb8cv7sArw4VuPF0K1k8=",
         "owner": "magicmonty",
         "repo": "nixvim",
-        "rev": "6108fa36902a72711135836cc671c7f307f0308c",
+        "rev": "8d85893a2f610cdedf4fcd3d1ef62840ffffafbb",
         "type": "github"
       },
       "original": {
