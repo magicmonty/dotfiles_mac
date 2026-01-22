@@ -45,7 +45,7 @@
           }
 
           tab name="Editor" split_direction="horizontal" {
-            pane
+            pane command="nvim"
           }
 
           tab name="AI" {
