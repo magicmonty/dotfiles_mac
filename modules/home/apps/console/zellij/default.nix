@@ -87,6 +87,11 @@
       copy_command = "pbcopy";
       copy_on_select = true;
       keybinds = {
+        _children = [
+          {
+            unbind = "Ctrl q";
+          }
+        ];
         tab._children = [
           {
             bind = {
