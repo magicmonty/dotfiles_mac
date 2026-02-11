@@ -44,6 +44,7 @@ _: {
       "passepartout"
       "raycast"
       "sf-symbols"
+      "supacode"
       "tailscale-app"
       "visual-studio-code"
     ];
