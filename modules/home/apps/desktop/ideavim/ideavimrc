@@ -52,6 +52,10 @@ nmap gC :action GotoClass<CR>
 nmap gd :action GotoDeclaration<CR>
 nmap gu :action FindUsages<CR>
 
+nmap <leader>ft :action FindInPath<CR>
+nmap <leader>fg :action SearchEverywhere<CR>
+nmap <leader>ff :action SearchEverywhere<CR>
+
 nmap <leader>bn :action NextTab<CR>
 nmap <leader>bp :action PreviousTab<CR>
 nmap <leader>bd :action CloseContent<CR>
@@ -86,6 +90,15 @@ nnoremap <leader>n :action Forward<CR>
 
 nnoremap <leader>cf :action ReformatCode<CR>
 nnoremap <leader>ca :action ShowIntentionActions<CR>
+nnoremap <leader>cc :action AIAssistant.Editor.AskAiAssistantInEditor<CR>
+nnoremap <leader>cr :action RenameElement<CR>
+nnoremap <leader>ci :action Inline<CR>
+nnoremap <leader>cs :action ChangeSignature<CR>
+nnoremap <leader>cv :action IntroduceVariable<CR>
+nnoremap <leader>cm :action ExtractMethod<CR>
+nnoremap <leader>co :action OptimizeImports<CR>
+nnoremap <leader>cg :action Generate<CR>
+vnoremap ai :action AIAssistant.Editor.AskAiAssistantInEditor<CR>
 
 nnoremap <leader>db :action ToggleLineBreakpoint<CR><C-l>
 nnoremap <leader>di :action StepInto<CR>
