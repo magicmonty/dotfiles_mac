@@ -69,9 +69,14 @@ nmap <leader>rm :action ExtractMethod<CR>
 nmap <leader>ro :action OptimizeImports<CR>
 nmap <leader>rg :action Generate<CR>
 
+nmap <leader>ctr :action RiderUnitTestRunContextAction<CR>
+nmap <leader>ctf :action RiderUnitTestRunContextAction<CR>
 nmap <leader>ur :action RiderUnitTestRunContextAction<CR>
+nmap <leader>ctd :action RiderUnitTestDebugContextAction<CR>
 nmap <leader>ud :action RiderUnitTestDebugContextAction<CR>
+nmap <leader>cts :action RiderUnitTestRunSolutionAction<CR>
 nmap <leader>ul :action RiderUnitTestRunSolutionAction<CR>
+nmap <leader>ctt :action RiderUnitTestRunCurrentSessionAction<CR>
 nmap <leader>uu :action RiderUnitTestRunCurrentSessionAction<CR>
 
 nnoremap zc :action CollapseRegion<CR>
