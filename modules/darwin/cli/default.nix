@@ -7,10 +7,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-    age
     btop
     fd
     figlet
+    gnupg
     gnused
     imagemagick
     just
