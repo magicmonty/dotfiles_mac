@@ -37,6 +37,7 @@ _: {
       "jetbrains-toolbox"
       "karabiner-elements"
       "keepassxc"
+      "keybase"
       "microsoft-auto-update"
       "microsoft-openjdk@21"
       "microsoft-teams"
