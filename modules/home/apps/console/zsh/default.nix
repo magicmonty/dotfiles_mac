@@ -105,6 +105,10 @@ with lib.mgnix; {
             fi
 
             [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
+            if [ -e /run/secrets/telerik/api-key ]; then
+              export MY_API_KEY=$(cat /run/secrets/telerik/api-key)
+            fi
           ''
         ];
       };

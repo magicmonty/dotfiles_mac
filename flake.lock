@@ -386,11 +386,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1771914212,
-        "narHash": "sha256-GU5p/rrOVoGuOpFdkQv58enH+wqaVc0IqHJJNSIXs/Q=",
+        "lastModified": 1771988864,
+        "narHash": "sha256-Zc0kPK7nu+bThM5En5ZbLXhROU5DM6sj6rLdJ2wyaRA=",
         "owner": "numtide",
         "repo": "nix-ai-tools",
-        "rev": "5d248c6034c1bebf5bf668c74ee0a61a655dbf19",
+        "rev": "378270d796a9380ba72cf4ba0997d2c40a21d42f",
         "type": "github"
       },
       "original": {
@@ -586,6 +586,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
         "snowfall-lib": "snowfall-lib",
+        "sops-nix": "sops-nix",
         "stylix": "stylix",
         "unstable": "unstable"
       }
@@ -609,6 +610,26 @@
       "original": {
         "owner": "snowfallorg",
         "repo": "lib",
+        "type": "github"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771889317,
+        "narHash": "sha256-YV17Q5lEU0S9ppw08Y+cs4eEQJBuc79AzblFoHORLMU=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "b027513c32e5b39b59f64626b87fbe168ae02094",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
         "type": "github"
       }
     },

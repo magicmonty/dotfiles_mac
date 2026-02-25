@@ -48,10 +48,6 @@
             pane command="nvim"
           }
 
-          tab name="AI" {
-            pane command="copilot" close_on_exit=true
-          }
-
           tab name="GIT" {
             pane command="lazygit" close_on_exit=true
           }
