@@ -9,6 +9,7 @@ _: {
     };
     brews = [
       "azure-cli"
+      "cargo-nextest"
       "gnu-sed"
       "gnutls"
       "krb5"
