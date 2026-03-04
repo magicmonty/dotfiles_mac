@@ -66,6 +66,13 @@ with lib.mgnix; {
               zstyle ':completion:*' cache-path ~/.zsh/cache
             ''
           )
+          (
+            lib.mkOrder 551
+            #sh
+            ''
+              FPATH=$HOME/.docker/completions:$FPATH
+            ''
+          )
 
           # sh
           ''
