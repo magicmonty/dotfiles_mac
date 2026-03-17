@@ -10,14 +10,18 @@ _: {
     brews = [
       "azure-cli"
       "cargo-nextest"
+      "coreutils"
       "gnu-sed"
       "gnutls"
       "krb5"
       "nvm"
+      "pipx"
       "scrcpy"
+      "xcp"
+      "xcbeautify"
+      "xcode-build-server"
     ];
     casks = [
-      "alt-tab"
       "android-platform-tools"
       "azure-data-studio"
       "beyond-compare"
@@ -49,6 +53,7 @@ _: {
       "supacode"
       "tailscale-app"
       "visual-studio-code"
+      "wezterm"
     ];
   };
 }

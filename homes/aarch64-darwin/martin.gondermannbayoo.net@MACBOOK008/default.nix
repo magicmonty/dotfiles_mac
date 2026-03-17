@@ -21,6 +21,7 @@ _: {
     };
     sessionPath = [
       "$HOME/.dotnet/tools"
+      "$HOME/.local/bin"
       "/usr/local/share/dotnet/x64"
     ];
   };

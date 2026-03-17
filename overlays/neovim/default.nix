@@ -13,6 +13,7 @@ in {
     config.sys.lang = {
       obsidian = config;
       dotnet.enable = true;
+      swift.enable = true;
     };
   };
   neovim = nixvim.packages.${prev.stdenv.hostPlatform.system}.default.extend {
