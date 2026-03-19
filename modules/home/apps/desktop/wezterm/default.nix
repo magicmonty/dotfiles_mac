@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 with lib;
@@ -159,9 +160,8 @@ with lib.mgnix; {
             -- <Leader>r activates resize mode
             mapl("r", act.ActivateKeyTable({ name = resize_pane, one_shot = false }))
 
-            -- <Leader>g or <Ctrl>g opens a new Tab with lazygit
-            mapl("g", act.SpawnCommandInNewTab({ args = { "lazygit" } }))
-            mapc("g", act.SpawnCommandInNewTab({ args = { "lazygit" } }))
+            -- <Leader>g opens a new Tab with lazygit
+            mapl("g", act.SpawnCommandInNewTab({ args = { "${pkgs.lazygit}/bin/lazygit" } }))
 
             -- <Leader>t opens a new tab
             mapl("t", act.SpawnTab("CurrentPaneDomain"))
