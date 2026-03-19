@@ -43,6 +43,7 @@ _: {
       "karabiner-elements"
       "keepassxc"
       "keybase"
+      "logi-options+"
       "microsoft-auto-update"
       "microsoft-openjdk@21"
       "microsoft-teams"
