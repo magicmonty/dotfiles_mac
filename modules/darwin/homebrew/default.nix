@@ -44,6 +44,7 @@ _: {
       "karabiner-elements"
       "keepassxc"
       "keybase"
+      "krita"
       "logi-options+"
       "microsoft-auto-update"
       "microsoft-openjdk@21"
