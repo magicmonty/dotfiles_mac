@@ -18,7 +18,7 @@
           pane size=1 borderless=true {
             plugin location="compact-bar"
           }
-          pane command="copilot" close_on_exit=true
+          pane command="opencode" close_on_exit=true
         }
       '';
     };

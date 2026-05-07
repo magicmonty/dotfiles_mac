@@ -23,7 +23,6 @@ _: {
     ];
     casks = [
       "android-platform-tools"
-      "azure-data-studio"
       "beyond-compare"
       "bruno"
       "chatgpt"
@@ -50,9 +49,11 @@ _: {
       "microsoft-openjdk@21"
       "microsoft-teams"
       "obsidian"
+      "opencode-desktop"
       "passepartout"
       "raycast"
       "sf-symbols"
+      "skim"
       "tailscale-app"
       "visual-studio-code"
       "wezterm"

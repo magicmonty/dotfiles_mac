@@ -176,17 +176,6 @@ with lib; {
             fi
           fi
         }
-
-        # tmux
-        if [[ "$TERM" != "xterm-kitty" && "$TERM" != "xterm-ghostty" ]]; then
-          if ! [[ -o login ]]; then
-            if [[ -z "$TMUX" ]]; then
-              alias tmux="tmux_start"
-              tmux_start
-            fi
-          fi;
-        fi;
-
       '';
     };
   };

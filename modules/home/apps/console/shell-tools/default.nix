@@ -4,6 +4,7 @@
     fd
     gum
     jq
+    ncdu
     ripgrep
     unzip
     wget
